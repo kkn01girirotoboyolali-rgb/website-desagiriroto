@@ -3,55 +3,723 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Desa Giriroto</title>
+    <title>Website Resmi Desa Giriroto - Boyolali</title>
+    
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-        header { background-color: #006699; color: white; padding: 20px; text-align: center; }
-        nav { background-color: #004080; padding: 10px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .container { padding: 20px; max-width: 900px; margin: auto; background: white; margin-top: 20px; border-radius: 8px; }
-        footer { background-color: #222; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+        :root {
+            --primary-color: #0f5132;
+            --primary-light: #198754;
+            --accent-color: #ffc107;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --text-color: #495057;
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* --- NAVBAR --- */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .logo-text h2 {
+            font-size: 18px;
+            color: var(--primary-color);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .btn-contact {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 8px 18px;
+            border-radius: 6px;
+        }
+
+        .btn-contact:hover {
+            background-color: var(--primary-light) !important;
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            background: linear-gradient(rgba(15, 81, 50, 0.85), rgba(15, 81, 50, 0.75)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: white;
+            padding: 100px 20px 120px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- STATS CARD --- */
+        .stats-container {
+            max-width: 1100px;
+            margin: -50px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-number {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #6c757d;
+            font-size: 16px;
+        }
+
+        /* Profil Grid */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .kades-img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .profile-text h3 {
+            font-size: 24px;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .profile-text p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+            font-size: 15px;
+        }
+
+        /* Visi Misi Cards */
+        .visi-misi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .vm-card {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .vm-card h3 {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .vm-card ul {
+            list-style: none;
+        }
+
+        .vm-card ul li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .vm-card ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-light);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Layanan Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e8f5e9;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 20px;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        /* Kontak Section */
+        .contact-box {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-item i {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-top: 3px;
+        }
+
+        .info-item h4 {
+            font-size: 16px;
+            color: var(--dark-color);
+        }
+
+        .info-item p {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .map-box {
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+            background-color: #e9ecef;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            color: #adb5bd;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; }
+            .nav-links { gap: 15px; font-size: 14px; flex-wrap: wrap; justify-content: center; }
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 15px; }
+            .profile-grid, .contact-box { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <header>
-        <h1>Website Resmi Desa Giriroto</h1>
-        <p>Kecamatan Ngemplak, Kabupaten Boyolali</p>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-building-columns"></i></div>
+                <div class="logo-text">
+                    <h2>DESA GIRIROTO</h2>
+                    <p>Kec. Ngemplak, Kab. Boyolali</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#visi-misi">Visi Misi</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#kontak" class="btn-contact">Kontak Desa</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#profil">Profil</a>
-        <a href="#visi-misi">Visi & Misi</a>
-        <a href="#layanan">Layanan</a>
-        <a href="#kontak">Kontak</a>
-    </nav>
+    <!-- HERO SECTION -->
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <span class="hero-badge"><i class="fa-solid fa-bullhorn"></i> Selamat Datang di Portal Resmi</span>
+            <h1>Pusat Informasi & Pelayanan Publik Desa Giriroto</h1>
+            <p>Mewujudkan tata kelola pemerintahan desa yang transparan, akuntabel, dan berorientasi pada kesejahteraan masyarakat.</p>
+            <div class="hero-buttons">
+                <a href="#profil" class="btn btn-primary">Jelajahi Profil</a>
+                <a href="#layanan" class="btn btn-outline">Layanan Warga</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="container" id="profil">
-        <h2>Profil Desa</h2>
-        <p>Selamat datang di website resmi Desa Giriroto, Kecamatan Ngemplak, Kabupaten Boyolali. Website ini hadir sebagai sarana informasi dan pelayanan publik bagi masyarakat desa.</p>
+    <!-- STATS HIGHLIGHT -->
+    <div class="stats-container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-number">± 4.500</div>
+                <div class="stat-label">Jumlah Penduduk</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="stat-number">Boyolali</div>
+                <div class="stat-label">Kecamatan Ngemplak</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-store"></i></div>
+                <div class="stat-number">UMKM</div>
+                <div class="stat-label">Potensi Ekonomi Lokal</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                <div class="stat-number">Aktif</div>
+                <div class="stat-label">Pelayanan Warga</div>
+            </div>
+        </div>
     </div>
 
-    <div class="container" id="visi-misi">
-        <h2>Visi & Misi</h2>
-        <h3>Visi</h3>
-        <p>Mewujudkan Desa Giriroto yang maju, mandiri, dan sejahtera.</p>
-        <h3>Misi</h3>
-        <ul>
-            <li>Meningkatkan kualitas pelayanan publik.</li>
-            <li>Pemberdayaan ekonomi masyarakat dan UMKM.</li>
-            <li>Pembangunan infrastruktur desa yang berkelanjutan.</li>
-        </ul>
-    </div>
+    <!-- PROFIL DESA -->
+    <section id="profil">
+        <div class="section-title">
+            <h2>Profil Desa Giriroto</h2>
+            <p>Mengenal lebih dekat kehangatan dan potensi Desa Giriroto</p>
+        </div>
+        
+        <div class="profile-grid">
+            <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=600&q=80" alt="Balai Desa Giriroto" class="kades-img">
+            <div class="profile-text">
+                <h3>Sambutan Pemerintah Desa</h3>
+                <p>Sugeng rawuh ing Desa Giriroto. Kami berkomitmen untuk terus memberikan pelayanan terbaik bagi seluruh warga masyarakat Desa Giriroto, Kecamatan Ngemplak, Kabupaten Boyolali.</p>
+                <p>Website ini hadir sebagai wujud transparansi publik dan kemudahan akses informasi bagi warga desa maupun masyarakat umum yang ingin mengetahui informasi terkini seputar kegiatan desa, potensi ekonomi, dan pelayanan kependudukan.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="container" id="kontak">
-        <h2>Kontak Kantor Desa</h2>
-        <p><strong>Alamat:</strong> Jl. Raya Giriroto, Ngemplak, Boyolali</p>
-        <p><strong>Jam Pelayanan:</strong> Senin - Jumat (08.00 - 15.00 WIB)</p>
-    </div>
+    <!-- VISI & MISI -->
+    <section id="visi-misi">
+        <div class="section-title">
+            <h2>Visi & Misi</h2>
+            <p>Arah dan tujuan pembangunan Desa Giriroto</p>
+        </div>
 
+        <div class="visi-misi-grid">
+            <div class="vm-card">
+                <h3><i class="fa-solid fa-eye"></i> Visi Desa</h3>
+                <p style="font-size: 16px; font-weight: 500; color: var(--dark-color); line-height: 1.6;">
+                    "Terwujudnya Desa Giriroto yang Mandiri, Sejahtera, Berbudaya, dan Unggul dalam Pelayanan Publik Berbasis Gotong Royong."
+                </p>
+            </div>
+            <div class="vm-card">
+                <h3><i class="fa-solid fa-bullseye"></i> Misi Desa</h3>
+                <ul>
+                    <li>Meningkatkan kualitas tata kelola pemerintahan desa yang bersih dan efisien.</li>
+                    <li>Mendorong pertumbuhan ekonomi desa melalui pemberdayaan UMKM dan Pertanian.</li>
+                    <li>Membangun infrastruktur desa yang merata dan ramah lingkungan.</li>
+                    <li>Memelihara nilai-nilai sosial budaya dan semangat gotong royong warga.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN PUBLIK -->
+    <section id="layanan">
+        <div class="section-title">
+            <h2>Layanan Masyarakat</h2>
+            <p>Kemudahan pengurusan dokumen administrasi warga desa</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-id-card"></i></div>
+                <h3>Pengurusan KTP & KK</h3>
+                <p>Surat pengantar untuk pembuatan atau perubahan data KTP dan Kartu Keluarga.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
+                <h3>Surat Keterangan Usaha</h3>
+                <p>Layanan pembuatan Surat Keterangan Usaha (SKU) untuk pendaftaran UMKM.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                <h3>Surat Keterangan Tidak Mampu</h3>
+                <p>Pengurusan SKTM untuk keperluan pendidikan, kesehatan, dan bantuan sosial.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-house-chimney-user"></i></div>
+                <h3>Surat Pindah/Datang</h3>
+                <p>Pelayanan administrasi bagi warga yang pindah domisili atau warga baru.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK & LOKASI -->
+    <section id="kontak">
+        <div class="section-title">
+            <h2>Kontak & Alamat Kantor</h2>
+            <p>Silakan hubungi kami atau kunjungi balai desa pada jam kerja</p>
+        </div>
+
+        <div class="contact-box">
+            <div class="contact-info">
+                <h3>Kantor Desa Giriroto</h3>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Alamat Kantor</h4>
+                        <p>Jl. Raya Giriroto, Kecamatan Ngemplak, Kabupaten Boyolali, Jawa Tengah 57375</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <h4>Jam Pelayanan</h4>
+                        <p>Senin - Jumat: 08.00 - 15.00 WIB<br>Sabtu & Minggu: Libur</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4>Telepon / WhatsApp</h4>
+                        <p>+62 812-3456-7890 (Kantor Desa)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-box">
+                <div>
+                    <i class="fa-solid fa-map-location-dot" style="font-size: 40px; color: var(--primary-color); margin-bottom: 10px;"></i>
+                    <h4>Lokasi Kantor Desa</h4>
+                    <p>Desa Giriroto, Ngemplak, Boyolali</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 KKN Desa Giriroto. All Rights Reserved.</p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Desa Giriroto</h3>
+                <p>Website resmi profil dan informasi pelayanan publik Desa Giriroto, Kecamatan Ngemplak, Kabupaten Boyolali.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Tautan Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#profil">Profil Desa</a></li>
+                    <li><a href="#visi-misi">Visi & Misi</a></li>
+                    <li><a href="#layanan">Layanan Kependudukan</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Program KKN</h3>
+                <p>Dikembangkan oleh Tim KKN Desa Giriroto Boyolali sebagai bentuk pengabdian kepada masyarakat.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; Tim KKN Desa Giriroto. All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>
