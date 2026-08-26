@@ -124,10 +124,10 @@
 
         /* --- HERO BANNER --- */
         .hero {
-            background: linear-gradient(rgba(15, 81, 50, 0.85), rgba(15, 81, 50, 0.75)), 
-                        url('2.depan gapura.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(15, 81, 50, 0.8), rgba(15, 81, 50, 0.75)), 
+                        url('IMG_4989.HEIC.jpg') center/cover no-repeat;
             color: white;
-            padding: 100px 20px 120px;
+            padding: 110px 20px 130px;
             text-align: center;
         }
 
@@ -196,51 +196,6 @@
             transform: translateY(-2px);
         }
 
-        /* --- STATS CARD --- */
-        .stats-container {
-            max-width: 1100px;
-            margin: -50px auto 60px;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-icon {
-            font-size: 32px;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .stat-number {
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--dark-color);
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: #6c757d;
-        }
-
         /* --- SECTIONS --- */
         section {
             padding: 60px 20px;
@@ -277,84 +232,83 @@
         }
 
         /* Profil Grid */
-        .profile-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-            align-items: center;
+        .profile-card {
             background: white;
             padding: 40px;
             border-radius: 16px;
             box-shadow: var(--card-shadow);
+            display: flex;
+            gap: 30px;
+            align-items: center;
         }
 
-        .kades-img {
-            width: 100%;
-            border-radius: 12px;
-            object-fit: cover;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .kades-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #e8f5e9;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            flex-shrink: 0;
         }
 
         .profile-text h3 {
             font-size: 24px;
-            color: var(--dark-color);
-            margin-bottom: 15px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
         }
 
-        .profile-text p {
+        .profile-text .subtitle {
+            font-weight: 600;
+            color: var(--accent-color);
             margin-bottom: 15px;
-            color: var(--text-color);
-            font-size: 15px;
+            display: block;
         }
 
-        /* Visi Misi Cards */
-        .visi-misi-grid {
+        /* Potensi Desa Grid */
+        .potensi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .vm-card {
+        .potensi-card {
             background: white;
-            padding: 35px;
+            padding: 30px;
             border-radius: 16px;
             box-shadow: var(--card-shadow);
-            border-top: 5px solid var(--primary-color);
+            border-left: 5px solid var(--primary-color);
+            transition: var(--transition);
         }
 
-        .vm-card h3 {
-            font-size: 22px;
+        .potensi-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .potensi-icon {
+            font-size: 32px;
             color: var(--primary-color);
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
-        .vm-card ul {
-            list-style: none;
+        .potensi-card h3 {
+            font-size: 20px;
+            color: var(--dark-color);
+            margin-bottom: 10px;
         }
 
-        .vm-card ul li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .vm-card ul li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--primary-light);
-            position: absolute;
-            left: 0;
-            top: 2px;
+        .potensi-card p {
+            font-size: 14px;
+            color: #6c757d;
         }
 
         /* Layanan Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
 
@@ -435,18 +389,37 @@
             color: #6c757d;
         }
 
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+
+        .btn-wa:hover {
+            background-color: #1eb954;
+        }
+
         .map-box {
             width: 100%;
             height: 100%;
             min-height: 250px;
-            background-color: #e9ecef;
+            background-color: #e8f5e9;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #6c757d;
+            color: var(--primary-color);
             text-align: center;
             padding: 20px;
+            border: 2px dashed var(--primary-light);
         }
 
         /* --- FOOTER --- */
@@ -511,7 +484,8 @@
             .nav-links { gap: 15px; font-size: 14px; flex-wrap: wrap; justify-content: center; }
             .hero h1 { font-size: 30px; }
             .hero p { font-size: 15px; }
-            .profile-grid, .contact-box { grid-template-columns: 1fr; }
+            .profile-card, .contact-box { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
+            .info-item { text-align: left; }
         }
     </style>
 </head>
@@ -529,8 +503,8 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#beranda">Beranda</a></li>
-                <li><a href="#profil">Profil</a></li>
-                <li><a href="#visi-misi">Visi Misi</a></li>
+                <li><a href="#pemerintahan">Pemerintahan</a></li>
+                <li><a href="#potensi">Potensi Desa</a></li>
                 <li><a href="#layanan">Layanan</a></li>
                 <li><a href="#kontak" class="btn-contact">Kontak Desa</a></li>
             </ul>
@@ -542,79 +516,63 @@
         <div class="hero-content">
             <span class="hero-badge"><i class="fa-solid fa-bullhorn"></i> Selamat Datang di Portal Resmi</span>
             <h1>Pusat Informasi & Pelayanan Publik Desa Giriroto</h1>
-            <p>Mewujudkan tata kelola pemerintahan desa yang transparan, akuntabel, dan berorientasi pada kesejahteraan masyarakat.</p>
+            <p>Kecamatan Ngemplak, Kabupaten Boyolali, Jawa Tengah.</p>
             <div class="hero-buttons">
-                <a href="#profil" class="btn btn-primary">Jelajahi Profil</a>
-                <a href="#layanan" class="btn btn-outline">Layanan Warga</a>
+                <a href="#potensi" class="btn btn-primary">Potensi Desa</a>
+                <a href="#layanan" class="btn btn-outline">Layanan Publik</a>
             </div>
         </div>
     </section>
 
-    <!-- STATS HIGHLIGHT -->
-    <div class="stats-container">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
-                <div class="stat-number">± 4.500</div>
-                <div class="stat-label">Jumlah Penduduk</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                <div class="stat-number">Boyolali</div>
-                <div class="stat-label">Kecamatan Ngemplak</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon"><i class="fa-solid fa-store"></i></div>
-                <div class="stat-number">UMKM</div>
-                <div class="stat-label">Potensi Ekonomi Lokal</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon"><i class="fa-solid fa-handshake-angle"></i></div>
-                <div class="stat-number">Aktif</div>
-                <div class="stat-label">Pelayanan Warga</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- PROFIL DESA -->
-    <section id="profil">
+    <!-- PEMERINTAHAN / KEPALA DESA -->
+    <section id="pemerintahan">
         <div class="section-title">
-            <h2>Profil Desa Giriroto</h2>
-            <p>Mengenal lebih dekat kehangatan dan potensi Desa Giriroto</p>
+            <h2>Pemerintahan Desa</h2>
+            <p>Kepemimpinan Desa Giriroto</p>
         </div>
         
-        <div class="profile-grid">
-            <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=600&q=80" alt="Balai Desa Giriroto" class="kades-img">
+        <div class="profile-card">
+            <div class="kades-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
             <div class="profile-text">
-                <h3>Sambutan Pemerintah Desa</h3>
-                <p>Sugeng rawuh ing Desa Giriroto. Kami berkomitmen untuk terus memberikan pelayanan terbaik bagi seluruh warga masyarakat Desa Giriroto, Kecamatan Ngemplak, Kabupaten Boyolali.</p>
-                <p>Website ini hadir sebagai wujud transparansi publik dan kemudahan akses informasi bagi warga desa maupun masyarakat umum yang ingin mengetahui informasi terkini seputar kegiatan desa, potensi ekonomi, dan pelayanan kependudukan.</p>
+                <h3>Bapak Lilik Rusmianto</h3>
+                <span class="subtitle">Kepala Desa Giriroto</span>
+                <p>Selamat datang di portal pelayanan dan informasi publik Desa Giriroto. Kami berkomitmen untuk mewujudkan tata kelola pemerintahan desa yang terbuka, responsif, serta memajukan perekonomian dan potensi wisata desa.</p>
             </div>
         </div>
     </section>
 
-    <!-- VISI & MISI -->
-    <section id="visi-misi">
+    <!-- POTENSI DESA -->
+    <section id="potensi">
         <div class="section-title">
-            <h2>Visi & Misi</h2>
-            <p>Arah dan tujuan pembangunan Desa Giriroto</p>
+            <h2>Potensi & Pariwisata Desa</h2>
+            <p>Daya tarik wisata, pertanian, dan UMKM Desa Giriroto</p>
         </div>
 
-        <div class="visi-misi-grid">
-            <div class="vm-card">
-                <h3><i class="fa-solid fa-eye"></i> Visi Desa</h3>
-                <p style="font-size: 16px; font-weight: 500; color: var(--dark-color); line-height: 1.6;">
-                    "Terwujudnya Desa Giriroto yang Mandiri, Sejahtera, Berbudaya, dan Unggul dalam Pelayanan Publik Berbasis Gotong Royong."
-                </p>
+        <div class="potensi-grid">
+            <div class="potensi-card">
+                <div class="potensi-icon"><i class="fa-solid fa-water"></i></div>
+                <h3>Embung Giriroto</h3>
+                <p>Destinasi wisata perairan desa yang asri, cocok untuk rekreasi keluarga dan menikmati suasana alam.</p>
             </div>
-            <div class="vm-card">
-                <h3><i class="fa-solid fa-bullseye"></i> Misi Desa</h3>
-                <ul>
-                    <li>Meningkatkan kualitas tata kelola pemerintahan desa yang bersih dan efisien.</li>
-                    <li>Mendorong pertumbuhan ekonomi desa melalui pemberdayaan UMKM dan Pertanian.</li>
-                    <li>Membangun infrastruktur desa yang merata dan ramah lingkungan.</li>
-                    <li>Memelihara nilai-nilai sosial budaya dan semangat gotong royong warga.</li>
-                </ul>
+
+            <div class="potensi-card">
+                <div class="potensi-icon"><i class="fa-solid fa-campground"></i></div>
+                <h3>Jati Park</h3>
+                <p>Kawasan area terbuka hijau yang dirancang untuk kebutuhan <i>camping ground</i> dan bumi perkemahan.</p>
+            </div>
+
+            <div class="potensi-card">
+                <div class="potensi-icon"><i class="fa-solid fa-seedling"></i></div>
+                <h3>Greenhouse Melon</h3>
+                <p>Fasilitas budidaya pertanian modern unggulan yang terletak di sebelah timur Kantor Desa Giriroto.</p>
+            </div>
+
+            <div class="potensi-card">
+                <div class="potensi-icon"><i class="fa-solid fa-store"></i></div>
+                <h3>UMKM Lokal</h3>
+                <p>Sektor ekonomi kreatif yang berkembang pesat meliputi kelompok tani, pengrajin mebel, serta pedagang jajanan terkini.</p>
             </div>
         </div>
     </section>
@@ -623,29 +581,29 @@
     <section id="layanan">
         <div class="section-title">
             <h2>Layanan Masyarakat</h2>
-            <p>Kemudahan pengurusan dokumen administrasi warga desa</p>
+            <p>Pengurusan dokumen administrasi warga di Kantor Desa</p>
         </div>
 
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-id-card"></i></div>
                 <h3>Pengurusan KTP & KK</h3>
-                <p>Surat pengantar untuk pembuatan atau perubahan data KTP dan Kartu Keluarga.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
-                <h3>Surat Keterangan Usaha</h3>
-                <p>Layanan pembuatan Surat Keterangan Usaha (SKU) untuk pendaftaran UMKM.</p>
+                <p>Surat pengantar untuk pembuatan baru atau pembaruan data KTP dan Kartu Keluarga.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
                 <h3>Surat Keterangan Tidak Mampu</h3>
-                <p>Pengurusan SKTM untuk keperluan pendidikan, kesehatan, dan bantuan sosial.</p>
+                <p>Pengurusan SKTM untuk keperluan bantuan pendidikan, kesehatan, atau bantuan sosial.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-house-chimney-user"></i></div>
-                <h3>Surat Pindah/Datang</h3>
-                <p>Pelayanan administrasi bagi warga yang pindah domisili atau warga baru.</p>
+                <h3>Surat Pindah / Datang</h3>
+                <p>Pelayanan administrasi kependudukan bagi warga yang pindah domisili atau warga baru.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-file-lines"></i></div>
+                <h3>Surat Pengantar Umum</h3>
+                <p>Layanan surat pengantar administrasi desa untuk berbagai kebutuhan resmi warga.</p>
             </div>
         </div>
     </section>
@@ -654,7 +612,7 @@
     <section id="kontak">
         <div class="section-title">
             <h2>Kontak & Alamat Kantor</h2>
-            <p>Silakan hubungi kami atau kunjungi balai desa pada jam kerja</p>
+            <p>Silakan hubungi perangkat desa atau kunjungi kantor desa pada jam operasional</p>
         </div>
 
         <div class="contact-box">
@@ -664,33 +622,36 @@
                 <div class="info-item">
                     <i class="fa-solid fa-location-dot"></i>
                     <div>
-                        <h4>Alamat Kantor</h4>
-                        <p>Jl. Raya Giriroto, Kecamatan Ngemplak, Kabupaten Boyolali, Jawa Tengah 57375</p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <i class="fa-solid fa-clock"></i>
-                    <div>
-                        <h4>Jam Pelayanan</h4>
-                        <p>Senin - Jumat: 08.00 - 15.00 WIB<br>Sabtu & Minggu: Libur</p>
+                        <h4>Alamat Detail</h4>
+                        <p>Giriroto, Kec. Ngemplak, Kab. Boyolali, Jawa Tengah (Kode Pos: 57375)<br><small>Koordinat: 7°29′47″S 110°47′30″E</small></p>
                     </div>
                 </div>
 
                 <div class="info-item">
                     <i class="fa-solid fa-phone"></i>
                     <div>
-                        <h4>Telepon / WhatsApp</h4>
-                        <p>+62 812-3456-7890 (Kantor Desa)</p>
+                        <h4>Kontak Perangkat Desa</h4>
+                        <p>+62 822-4182-6554</p>
+                        <a href="https://wa.me/6282241826554" target="_blank" class="btn-wa">
+                            <i class="fa-brands fa-whatsapp"></i> Hubungi via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <h4>Jam Operasional</h4>
+                        <p>Mengikuti jam kerja pemerintahan desa umum.</p>
                     </div>
                 </div>
             </div>
 
             <div class="map-box">
                 <div>
-                    <i class="fa-solid fa-map-location-dot" style="font-size: 40px; color: var(--primary-color); margin-bottom: 10px;"></i>
-                    <h4>Lokasi Kantor Desa</h4>
-                    <p>Desa Giriroto, Ngemplak, Boyolali</p>
+                    <i class="fa-solid fa-building-columns" style="font-size: 40px; color: var(--primary-color); margin-bottom: 15px;"></i>
+                    <h4>Pemerintah Desa Giriroto</h4>
+                    <p>Kecamatan Ngemplak, Kabupaten Boyolali</p>
                 </div>
             </div>
         </div>
@@ -701,15 +662,15 @@
         <div class="footer-container">
             <div class="footer-col">
                 <h3>Desa Giriroto</h3>
-                <p>Website resmi profil dan informasi pelayanan publik Desa Giriroto, Kecamatan Ngemplak, Kabupaten Boyolali.</p>
+                <p>Website resmi informasi publik dan potensi Desa Giriroto, Kecamatan Ngemplak, Kabupaten Boyolali, Jawa Tengah.</p>
             </div>
             <div class="footer-col">
                 <h3>Tautan Cepat</h3>
                 <ul class="footer-links">
                     <li><a href="#beranda">Beranda</a></li>
-                    <li><a href="#profil">Profil Desa</a></li>
-                    <li><a href="#visi-misi">Visi & Misi</a></li>
-                    <li><a href="#layanan">Layanan Kependudukan</a></li>
+                    <li><a href="#pemerintahan">Pemerintahan</a></li>
+                    <li><a href="#potensi">Potensi Desa</a></li>
+                    <li><a href="#layanan">Layanan</a></li>
                 </ul>
             </div>
             <div class="footer-col">
